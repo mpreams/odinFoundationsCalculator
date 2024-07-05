@@ -126,10 +126,11 @@ equals.onclick = () => {
     mem.textContent = 'Memory: ';
     if (first !== undefined && operator !== undefined) {
         display.textContent = Math.fround(operate(first, operator, second));
+        first = display.textContent;
     } else if (operator === '/' && second === 0) {
         display.textContent = 'Crash Test Dummy';
     } else {
         display.textContent = 'Incomplete equation';
     }
-    first, operator, second = undefined, undefined, undefined;
+    operator, second = undefined, undefined;
 };
