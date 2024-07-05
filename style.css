@@ -3,6 +3,11 @@ div {
     margin: 3px;
     padding: 3px;
 }
+
+#keypad, #keypad>div, #numpad>div>div {
+    border: 1px solid black;
+}
+
 #container, #numpad, #operations {
     display: flex;
     flex-direction: column;
@@ -15,4 +20,35 @@ div {
 
 #top, #middle, #bottom1, #bottom2 {
     display: flex;
+    justify-content: space-between;
+}
+
+#display, #container {
+    min-height: 25px;
+    max-width: 215px;
+    text-align: right;
+    font-size: 25px;
+}
+
+#numpad>div>div {
+    font-size: xx-large;
+    width: 100%;
+    min-width: 25px;
+}
+
+#numpad>div>#clear {
+    font-size: 10px;
+}
+
+#operations {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#operations>div {
+    height: 100%;
+    min-height: 34px;
+    font-size: x-large;
+    min-width: 20px;
 }

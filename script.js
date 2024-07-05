@@ -1,6 +1,4 @@
-const add = function(a, b) {
-    return a + b;
-};
+const add = (a, b) => a + b;
 
 const subtract = (a, b) => a - b;
 
@@ -60,3 +58,25 @@ eight.onclick = () => {
 nine.onclick = () => {
     display.textContent += 9;
 }
+zero.onclick = () => {
+    display.textContent += 0;
+}
+clear.onclick = () => {
+    display.textContent = '';
+}
+
+const plus = document.querySelector('add');
+const minus = document.querySelector('subtract');
+const multiplication = document.querySelector('multiply');
+const division = document.querySelector('divide');
+
+function storeFirst(x) {
+    first = display.textContent;
+    operator = x;
+    display.textContent = '';
+}
+
+plus.onclick = storeFirst('+');
+minus.onclick = storeFirst('-');
+multiplication.onclick = storeFirst('*');
+division.onclick = storeFirst('/');
