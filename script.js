@@ -31,6 +31,10 @@ const zero = document.querySelector('#zero');
 const equals = document.querySelector('#equals');
 const display = document.querySelector('#display');
 
+let mem = document.createTextNode('Memory: ');
+const container = document.querySelector('#container');
+container.insertBefore(mem, display);
+
 one.onclick = () => {
     display.textContent += 1;
 }
@@ -74,55 +78,52 @@ const division = document.querySelector('#divide');
 plus.onclick = () => {
     if (!first) {
         first = display.textContent;
-        operator = '+';
-        display.textContent = '';
-        console.log(first);
     } else {
         second = display.textContent;
         first = Math.fround(operate(first, operator, second));
-        display.textContent = '';
+        mem.textContent = 'Memory: ' + first;
     }
+    operator = '+';
+    display.textContent = '';
 };
 minus.onclick = () => {
     if (!first) {
         first = display.textContent;
-        operator = '-';
-        display.textContent = '';
-        console.log(first);
     } else {
         second = display.textContent;
         first = Math.fround(operate(first, operator, second));
-        display.textContent = '';
+        mem.textContent = 'Memory: ' + first;
     }
+    operator = '-';
+    display.textContent = '';
 };
 multiplication.onclick = () => {
     if (!first) {
         first = display.textContent;
-        operator = '*';
-        display.textContent = '';
-        console.log(first);
     } else {
         second = display.textContent;
         first = Math.fround(operate(first, operator, second));
-        display.textContent = '';
+        mem.textContent = 'Memory: ' + first;
     }
+    operator = '*';
+    display.textContent = '';
 };
 division.onclick = () => {
     if (!first) {
         first = display.textContent;
-        operator = '/';
-        display.textContent = '';
-        console.log(first);
     } else {
         second = display.textContent;
         first = Math.fround(operate(first, operator, second));
-        display.textContent = '';
+        mem.textContent = 'Memory: ' + first;
     }
+    operator = '/';
+    display.textContent = '';
 };
 
 
 equals.onclick = () => {
     second = display.textContent;
+    mem.textContent = 'Memory: ';
     if (first !== undefined && operator !== undefined) {
         display.textContent = Math.fround(operate(first, operator, second));
     } else if (operator === '/' && second === 0) {
