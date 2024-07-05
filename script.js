@@ -72,29 +72,54 @@ const multiplication = document.querySelector('#multiply');
 const division = document.querySelector('#divide');
 
 plus.onclick = () => {
-    first = display.textContent;
-    operator = '+';
-    display.textContent = '';
-    console.log(first);
+    if (!first) {
+        first = display.textContent;
+        operator = '+';
+        display.textContent = '';
+        console.log(first);
+    } else {
+        second = display.textContent;
+        first = Math.fround(operate(first, operator, second));
+        display.textContent = '';
+    }
 };
 minus.onclick = () => {
-    first = display.textContent;
-    operator = '-';
-    display.textContent = '';
-    console.log(first);
+    if (!first) {
+        first = display.textContent;
+        operator = '-';
+        display.textContent = '';
+        console.log(first);
+    } else {
+        second = display.textContent;
+        first = Math.fround(operate(first, operator, second));
+        display.textContent = '';
+    }
 };
 multiplication.onclick = () => {
-    first = display.textContent;
-    operator = '*';
-    display.textContent = '';
-    console.log(first);
+    if (!first) {
+        first = display.textContent;
+        operator = '*';
+        display.textContent = '';
+        console.log(first);
+    } else {
+        second = display.textContent;
+        first = Math.fround(operate(first, operator, second));
+        display.textContent = '';
+    }
 };
 division.onclick = () => {
-    first = display.textContent;
-    operator = '/';
-    display.textContent = '';
-    console.log(first);
+    if (!first) {
+        first = display.textContent;
+        operator = '/';
+        display.textContent = '';
+        console.log(first);
+    } else {
+        second = display.textContent;
+        first = Math.fround(operate(first, operator, second));
+        display.textContent = '';
+    }
 };
+
 
 equals.onclick = () => {
     second = display.textContent;
