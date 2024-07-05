@@ -62,6 +62,7 @@ zero.onclick = () => {
     display.textContent += 0;
 }
 clear.onclick = () => {
+    first, operator, second = undefined, undefined, undefined;
     display.textContent = '';
 }
 
@@ -97,5 +98,12 @@ division.onclick = () => {
 
 equals.onclick = () => {
     second = display.textContent;
-    display.textContent = operate(first, operator, second);
+    if (first !== undefined && operator !== undefined) {
+        display.textContent = Math.fround(operate(first, operator, second));
+    } else if (operator === '/' && second === 0) {
+        display.textContent = 'Crash Test Dummy';
+    } else {
+        display.textContent = 'Incomplete equation';
+    }
+    first, operator, second = undefined, undefined, undefined;
 };
